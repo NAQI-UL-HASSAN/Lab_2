@@ -3,6 +3,7 @@ module full_adder_tb();
  logic b1;
  logic c1;
  logic sum1;
+ logic carry1;
  full_adder DUT(
  .a(a1),
  .b(b1),
@@ -31,4 +32,11 @@ module full_adder_tb();
  #80;
  $stop;
  end
+ initial
+ begin
+ /*the following system task will print out the signal values
+ every time they change on the Transcript Window */
+ $monitor("sum=%b, carry=%b, a=%b, b=%b, c=%b", sum1,carry1,a1,b1,c1);
+ end
+ endmodule
  endmodule
