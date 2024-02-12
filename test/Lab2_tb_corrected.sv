@@ -4,39 +4,30 @@ module full_adder_tb();
  logic c1;
  logic sum1;
  logic carry1;
- full_adder DUT(
- .a(a1),
- .b(b1),
- .c(c1),
- .sum(sum1),
- .carry(carry1)
+ full_adder DUT_b(
+     .a(a1),
+     .b(b1),
+     .c(c1),
+     .sum(sum1),
+     .carry(carry1)
  );
- initial
- begin
- // Provide different combinations of the inputs to check validity of code
+ initial begin
  a1 = 0; b1 = 0; c1 = 0;
  #10;
  a1 = 0; b1 = 0; c1 = 1;
- #20;
+ #10;
  a1 = 0; b1 = 1; c1 = 0;
- #30;
+ #10;
  a1 = 0; b1 = 1; c1 = 1;
- #40;
+ #10;
  a1 = 1; b1 = 0; c1 = 0;
- #50;
+ #10;
  a1 = 1; b1 = 0; c1 = 1;
- #60;
+ #10;
  a1 = 1; b1 = 1; c1 = 0;
- #70
+ #10
  a1 = 1; b1 = 1; c1 = 1;
- #80;
+ #10;
  $stop;
  end
- initial
- begin
- /*the following system task will print out the signal values
- every time they change on the Transcript Window */
- $monitor("sum=%b, carry=%b, a=%b, b=%b, c=%b", sum1,carry1,a1,b1,c1);
- end
- endmodule
  endmodule

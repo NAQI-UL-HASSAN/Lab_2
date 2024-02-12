@@ -5,8 +5,6 @@ module full_adder(
  output logic sum,
  output logic carry
  );
- always_comb begin
- sum = (a ^ b) ^ c;
- carry = (a & b) | (c & (a ^ b));
- end
+assign sum = (a ^ b) ^ c;
+assign carry = (a & b) | (c & (a ^ b));
  endmodule

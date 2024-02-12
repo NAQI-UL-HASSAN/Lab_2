@@ -35,6 +35,6 @@
  begin
  /*the following system task will print out the signal values
  every time they change on the Transcript Window */
- $monitor("y=%b, x=%b, a=%b, b=%b, c=%b", y1,x1,a1,b1,c1);
+ $monitor("Time=%0t: y=%b, x=%b, a=%b, b=%b, c=%b", $time, y1,x1,a1,b1,c1);
  end
  endmodule
